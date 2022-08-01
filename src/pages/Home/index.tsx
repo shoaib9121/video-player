@@ -1,13 +1,17 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import VideoListing from "../../components/VideoListing";
+import { Container } from "./styled";
 
 const Home = (): JSX.Element => {
-  // const [products, setProducts] = useState<IProduct[]>([]);
-
-  // const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {}, []);
-
-  return <>Homepge</>;
+  return (
+    <Container>
+      <header>
+        <Link to="/">Home</Link>
+      </header>
+      <VideoListing />
+    </Container>
+  );
 };
 
 export default Home;
