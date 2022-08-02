@@ -1,20 +1,31 @@
 import { memo, useCallback } from "react";
 import { Grid, GridItem } from "./styled";
 import { useNavigate } from "react-router-dom";
+import { useApp } from "../../hooks/useApp";
+import { IVideo } from "../../types";
 
 const VideoListing = (): JSX.Element => {
   let navigate = useNavigate();
+  const { videos = [] } = useApp();
 
-  const handleClick = useCallback((videoId: string) => {
-    navigate(`/video/${videoId}`, { replace: true });
+  const handleClick = useCallback((video: IVideo) => {
+    navigate(`/video/${video.id}`, { replace: true });
   }, []);
+
+  if (!videos.length) {
+    return <></>;
+  }
 
   return (
     <Grid>
-      <GridItem onClick={() => handleClick("1")}></GridItem>
-      <GridItem onClick={() => handleClick("2")}></GridItem>
-      <GridItem onClick={() => handleClick("3")}></GridItem>
-      <GridItem onClick={() => handleClick("4")}></GridItem>
+      {videos.map((video) => {
+        return (
+          <GridItem
+            key={video.id}
+            onClick={() => handleClick(video)}
+          ></GridItem>
+        );
+      })}
     </Grid>
   );
 };
