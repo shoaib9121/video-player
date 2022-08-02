@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const responsiveBreakpoint = '1000px';
+const responsiveBreakpoint = "1000px";
 
 export const Grid = styled.div`
   display: flex;
@@ -14,12 +14,17 @@ export const Grid = styled.div`
 
 export const GridItemVideo = styled.div`
   width: 80%;
-  background: firebrick;
-  height: 450px;
-  
+  display: flex;
+  flex-direction: column;
+
   @media (max-width: ${responsiveBreakpoint}) {
     width: 100%;
   }
+`;
+
+export const VideoContainer = styled.div`
+  background: firebrick;
+  height: 450px;
 `;
 
 export const GridItemAside = styled.div`
@@ -28,15 +33,4 @@ export const GridItemAside = styled.div`
   @media (max-width: ${responsiveBreakpoint}) {
     width: 100%;
   }
-`;
-
-export const List = styled.div`
-  display: flex;
-  gap: 15px;
-  flex-direction: column;
-`;
-
-export const ListItem = styled.div`
-  background: grey;
-  height: 100px;
 `;

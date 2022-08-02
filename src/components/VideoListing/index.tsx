@@ -22,8 +22,11 @@ const VideoListing = (): JSX.Element => {
         return (
           <GridItem
             key={video.id}
+            style={{ background: video.type }}
             onClick={() => handleClick(video)}
-          ></GridItem>
+          >
+            {video.title}
+          </GridItem>
         );
       })}
     </Grid>
