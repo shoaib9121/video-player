@@ -4,7 +4,7 @@ export const videos =[
     type: "yellow",
     description: "Ipsum Lorem officia sit pariatur culpa Lorem sunt. Nostrud amet commodo in ex do dolor sunt eu tempor nisi qui. Est dolor anim et tempor non elit commodo id laborum sint sunt. Quis quis sint et mollit sint qui commodo deserunt ex anim consequat consectetur.",
     createdAt: "2016-09-10T09:21:48 -05:00",
-    url: "https://stream.mux.com/D02iof00VDpNaWN02ZsrY4csqBi8jmz02OtR",
+    url: "https://vimeo.com/243556536",
     comments: [
       {
         id: 0,
@@ -38,7 +38,7 @@ export const videos =[
     type: "teal",
     description: "Elit tempor ad anim tempor aliqua aliqua officia qui duis veniam nisi officia consequat aute. Et aliquip incididunt non tempor qui laborum dolore. Reprehenderit velit nostrud laboris fugiat reprehenderit nulla in.",
     createdAt: "2015-06-26T10:30:39 -05:00",
-    url: "https://stream.mux.com/D02iof00VDpNaWN02ZsrY4csqBi8jmz02OtR",
+    url: "https://www.youtube.com/watch?v=j-_t_W4WFAU",
     comments: [
       {
         id: 0,
@@ -140,7 +140,7 @@ export const videos =[
     type: "teal",
     description: "Lorem deserunt ullamco tempor reprehenderit in labore ex. Pariatur quis minim cupidatat anim do. Non aute ut ex Lorem. Est nulla enim aliquip sint esse eu.",
     createdAt: "2016-01-16T05:33:05 -05:00",
-    url: "https://stream.mux.com/D02iof00VDpNaWN02ZsrY4csqBi8jmz02OtR",
+    url: "https://www.youtube.com/watch?v=gxlahObaFkk",
     comments: [
       {
         id: 0,
@@ -174,7 +174,7 @@ export const videos =[
     type: "yellow",
     description: "Anim labore aliqua reprehenderit anim cillum incididunt duis do occaecat. Culpa amet mollit elit velit ad. Elit exercitation laboris incididunt anim aute non enim do dolor adipisicing laboris in. Magna dolore ut id aute deserunt. Cillum reprehenderit magna veniam qui amet officia tempor elit est irure laborum cupidatat aliquip esse. Aute ut eu Lorem do est sint ullamco ipsum officia. Enim pariatur tempor dolor ad.",
     createdAt: "2018-05-15T07:18:34 -05:00",
-    url: "https://stream.mux.com/D02iof00VDpNaWN02ZsrY4csqBi8jmz02OtR",
+    url: "https://www.youtube.com/watch?v=ysz5S6PUM-U",
     comments: [
       {
         id: 0,
@@ -208,7 +208,7 @@ export const videos =[
     type: "yellow",
     description: "Consectetur est reprehenderit non dolore amet ad ullamco in fugiat et. Id mollit deserunt reprehenderit magna fugiat sit in. Ipsum laboris et exercitation velit qui.",
     createdAt: "2019-01-17T06:41:22 -05:00",
-    url: "https://stream.mux.com/D02iof00VDpNaWN02ZsrY4csqBi8jmz02OtR",
+    url: "https://www.youtube.com/watch?v=oUFJJNQGwhk",
     comments: [
       {
         id: 0,
@@ -276,7 +276,7 @@ export const videos =[
     type: "teal",
     description: "Magna Lorem voluptate minim excepteur ullamco excepteur Lorem in excepteur laboris nostrud magna esse laborum. Cupidatat exercitation incididunt qui labore non laborum elit mollit eu. Aliquip est ut est fugiat reprehenderit ea Lorem id laboris mollit proident velit fugiat. Do tempor nisi et amet ipsum in et.",
     createdAt: "2021-11-02T05:05:00 -05:00",
-    url: "https://stream.mux.com/D02iof00VDpNaWN02ZsrY4csqBi8jmz02OtR",
+    url: "https://www.youtube.com/watch?v=j_KAOHosW3Y",
     comments: [
       {
         id: 0,
@@ -310,7 +310,7 @@ export const videos =[
     type: "blue",
     description: "Tempor laboris anim nostrud nostrud consequat dolore sint duis ea in ipsum. Dolor nulla tempor mollit incididunt consequat dolore veniam. Dolore ut qui consequat consectetur pariatur non do sunt enim nostrud reprehenderit consectetur culpa anim. Non magna ex ex fugiat in ex mollit qui reprehenderit magna. Cillum adipisicing incididunt voluptate fugiat eu nostrud ut qui consequat velit esse.",
     createdAt: "2016-11-21T03:07:35 -05:00",
-    url: "https://stream.mux.com/D02iof00VDpNaWN02ZsrY4csqBi8jmz02OtR",
+    url: "https://www.youtube.com/watch?v=_A0Beo0M-tQ",
     comments: [
       {
         id: 0,
@@ -344,7 +344,7 @@ export const videos =[
     type: "green",
     description: "Minim cillum adipisicing fugiat est quis pariatur ut officia elit cillum officia fugiat velit. Anim eiusmod culpa est deserunt sunt pariatur consectetur adipisicing eiusmod fugiat dolor nisi. Laboris adipisicing elit do nulla excepteur voluptate est dolore reprehenderit esse sunt. Fugiat anim irure est occaecat commodo consectetur velit. Non occaecat est est anim. Esse et exercitation anim est esse voluptate et est aliquip quis. Sint minim anim proident qui duis mollit ad quis consequat ipsum dolor.",
     createdAt: "2014-10-19T05:20:33 -05:00",
-    url: "https://stream.mux.com/D02iof00VDpNaWN02ZsrY4csqBi8jmz02OtR",
+    url: "https://www.youtube.com/watch?v=jNgP6d9HraI",
     comments: [
       {
         id: 0,

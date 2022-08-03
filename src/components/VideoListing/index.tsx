@@ -5,7 +5,7 @@ import { useApp } from "../../hooks/useApp";
 import { IVideo } from "../../types";
 
 const VideoListing = (): JSX.Element => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const { videos = [] } = useApp();
 
   const handleClick = useCallback((video: IVideo) => {
@@ -26,6 +26,7 @@ const VideoListing = (): JSX.Element => {
             onClick={() => handleClick(video)}
           >
             {video.title}
+            <p>{video.id} </p>
           </GridItem>
         );
       })}

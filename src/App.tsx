@@ -11,8 +11,8 @@ import { useEffect, useState } from "react";
 import { IVideo } from "./types";
 
 const App = () => {
-  const { token, setToken = DEFAULT_TOKEN } = useToken();
   const [videos, setVideos] = useState<IVideo[]>([]);
+  const { token, setToken = DEFAULT_TOKEN } = useToken();
 
   useEffect(() => {
     if (token) {
@@ -20,17 +20,16 @@ const App = () => {
     }
   }, []);
 
-  if (!token) {
-    return <Login setToken={setToken} />;
-  }
-
   const getVideos = async () => {
     const data = await fetchVideos();
     if (data) {
       setVideos(data);
     }
-    console.log(data);
   };
+
+  if (!token) {
+    return <Login setToken={setToken} />;
+  }
 
   return (
     <BrowserRouter>
