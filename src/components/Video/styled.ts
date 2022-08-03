@@ -15,6 +15,7 @@ export const Grid = styled.div`
 export const GridItemVideo = styled.div`
   width: 80%;
   display: flex;
+  gap: 50px;
   flex-direction: column;
 
   @media (max-width: ${responsiveBreakpoint}) {
