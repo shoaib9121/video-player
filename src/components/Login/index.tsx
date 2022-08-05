@@ -16,7 +16,7 @@ const Login = ({ setToken }: ILogin) => {
     };
     const token = await loginUser(loginCredentials);
     // setToken(token);
-    login(loginCredentials);
+    login && login(loginCredentials);
     // setUser({ username });
   };
 
