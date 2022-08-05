@@ -1,10 +1,13 @@
-
+export interface IUser {
+  username: string;
+}
 export interface IToken {
   token: string;
 }
 
 export interface ILogin {
-  setToken: any;
+  setToken?: any;
+  // setToken: (token: IToken) => void;
 }
 
 export interface ILoginCredentials {

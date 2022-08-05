@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import useUser from "../../hooks/useUser";
 import { loginUser } from "../../services";
 import { ILogin } from "../../types";
 
 const Login = ({ setToken }: ILogin) => {
+  const { setUser } = useUser();
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
@@ -13,6 +15,7 @@ const Login = ({ setToken }: ILogin) => {
       password,
     });
     setToken(token);
+    setUser({ username });
   };
 
   return (

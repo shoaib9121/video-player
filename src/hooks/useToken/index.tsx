@@ -3,9 +3,8 @@ import { IToken } from "../../types";
 
 const useToken = () => {
   const getToken = () => {
-    const tokenString =
-      sessionStorage.getItem("token") || JSON.stringify("default-token");
-    const userToken = JSON.parse(tokenString);
+    const tokenString = sessionStorage.getItem("token") || "";
+    const userToken = tokenString && JSON.parse(tokenString);
     return userToken?.token;
   };
 

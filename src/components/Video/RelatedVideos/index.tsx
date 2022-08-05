@@ -22,19 +22,22 @@ const RelatedVideos = ({ video = {} as IVideo }): JSX.Element => {
   }
 
   return (
-    <List>
-      {!!relatedVideos.length &&
-        relatedVideos.map((item) => (
-          <ListItem
-            key={item.id}
-            style={{ background: item.type }}
-            onClick={() => handleClick(item)}
-          >
-            {item.title}
-            <p>{item.id} </p>
-          </ListItem>
-        ))}
-    </List>
+    <>
+      <h3>Related Videos</h3>
+      <List>
+        {!!relatedVideos.length &&
+          relatedVideos.map((item) => (
+            <ListItem
+              key={item.id}
+              style={{ background: item.type }}
+              onClick={() => handleClick(item)}
+            >
+              {item.title}
+              <p>{item.id} </p>
+            </ListItem>
+          ))}
+      </List>
+    </>
   );
 };
 

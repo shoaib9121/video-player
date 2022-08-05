@@ -1,4 +1,4 @@
-import { BrowserRouter } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Login from "./components/Login";
 import useToken from "./hooks/useToken";
@@ -9,10 +9,12 @@ import AppProvider from "./hooks/useApp/app.provider";
 import { fetchVideos } from "./services";
 import { useEffect, useState } from "react";
 import { IVideo } from "./types";
+import useUser from "./hooks/useUser";
 
 const App = () => {
   const [videos, setVideos] = useState<IVideo[]>([]);
-  const { token, setToken = DEFAULT_TOKEN } = useToken();
+  const { token, setToken } = useToken();
+  const { setUser } = useUser();
 
   useEffect(() => {
     if (token) {
@@ -28,20 +30,14 @@ const App = () => {
   };
 
   if (!token) {
+    // return <Navigate to="/login" state={{ from: location }} replace />;
     return <Login setToken={setToken} />;
   }
 
   return (
-    <BrowserRouter>
-      <AppProvider videos={videos}>
-        <Container>
-          <Header />
-          <PageBody>
-            <ProtectedRoutes />
-          </PageBody>
-        </Container>
-      </AppProvider>
-    </BrowserRouter>
+    <AppProvider videos={videos}>
+      <Container></Container>
+    </AppProvider>
   );
 };
 export default App;
