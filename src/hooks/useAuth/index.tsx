@@ -16,9 +16,9 @@ export const AuthProvider: FC<IAuthState> = ({ children }) => {
     navigate("/home");
   };
 
-  // call this function to sign out logged in user
   const logout = () => {
-    setUser({} as IUser);
+    setUser(null);
+    // setUser({} as IUser);
     navigate("/", { replace: true });
   };
 

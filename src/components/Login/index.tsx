@@ -1,21 +1,23 @@
 import React, { useState } from "react";
-import useUser from "../../hooks/useUser";
+import { useAuth } from "../../hooks/useAuth";
 import { loginUser } from "../../services";
 import { ILogin } from "../../types";
 
 const Login = ({ setToken }: ILogin) => {
-  const { setUser } = useUser();
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const { login } = useAuth();
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    const token = await loginUser({
+    const loginCredentials = {
       username,
       password,
-    });
-    setToken(token);
-    setUser({ username });
+    };
+    const token = await loginUser(loginCredentials);
+    // setToken(token);
+    login(loginCredentials);
+    // setUser({ username });
   };
 
   return (

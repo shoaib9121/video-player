@@ -1,6 +1,7 @@
 import { Navigate, useOutlet } from "react-router-dom";
 import Header from "../../components/Header";
 import { useAuth } from "../../hooks/useAuth";
+import HomePage from "../../pages/Home";
 import { PageBody } from "../../styled";
 
 export const ProtectedLayout = () => {
@@ -8,13 +9,15 @@ export const ProtectedLayout = () => {
   const outlet = useOutlet();
 
   if (!user) {
-    return <Navigate to="/" />;
+    return <Navigate to="/login" />;
   }
 
   return (
     <div>
       <Header />
-      <PageBody>{/* <ProtectedRoutes /> */}</PageBody>
+      <PageBody>
+        <HomePage />
+      </PageBody>
       {outlet}
     </div>
   );

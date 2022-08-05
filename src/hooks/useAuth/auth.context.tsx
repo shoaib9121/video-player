@@ -1,2 +1,3 @@
 import { createContext } from "react";
-export const AuthCtx = createContext({});
+import { IAuthState } from "./auth.types";
+export const AuthCtx = createContext({} as IAuthState);
