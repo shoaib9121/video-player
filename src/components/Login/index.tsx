@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { useAuth } from "../../hooks/useAuth";
-import useToken from "../../hooks/useToken";
 import { loginUser } from "../../services";
 
 const Login = () => {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const { login } = useAuth();
-  const { setToken } = useToken();
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -17,7 +15,6 @@ const Login = () => {
     };
     const token = await loginUser(loginCredentials);
     if (token) {
-      setToken(token);
       login && login(loginCredentials, token);
     }
   };

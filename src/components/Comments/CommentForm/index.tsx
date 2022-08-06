@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import { FC, useState } from "react";
 import { FormContainer } from "./styled";
 
 const CommentForm: FC<{ handleNewComment: (comment: string) => void }> = (
@@ -7,11 +7,8 @@ const CommentForm: FC<{ handleNewComment: (comment: string) => void }> = (
   const { handleNewComment } = props;
   const [newComment, setNewComment] = useState("");
 
-  // const handleClick = useCallback((comment: IComment) => {}, []);
-
   return (
     <FormContainer>
-      {/* <form onSubmit={handleNewComment}> */}
       <label>
         <p>Username</p>
         <input
@@ -21,9 +18,15 @@ const CommentForm: FC<{ handleNewComment: (comment: string) => void }> = (
         />
       </label>
       <div>
-        <button onClick={() => handleNewComment(newComment)}>Submit</button>
+        <button
+          onClick={() => {
+            handleNewComment(newComment);
+            setNewComment("");
+          }}
+        >
+          Submit
+        </button>
       </div>
-      {/* </form> */}
     </FormContainer>
   );
 };

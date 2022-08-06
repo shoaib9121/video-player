@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import AuthProvider from "./hooks/useAuth/auth.provider";
+import { IUser } from "./types";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -12,7 +13,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <AuthProvider>
+      <AuthProvider user={{} as IUser}>
         <App />
       </AuthProvider>
     </BrowserRouter>
