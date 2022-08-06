@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { IToken } from "../../types";
 
 const useToken = () => {
   const getToken = () => {
@@ -10,9 +9,9 @@ const useToken = () => {
 
   const [token, setToken] = useState(getToken());
 
-  const saveToken = (userToken: IToken) => {
-    sessionStorage.setItem("token", JSON.stringify(userToken));
-    setToken(userToken.token);
+  const saveToken = (token: string) => {
+    sessionStorage.setItem("token", JSON.stringify(token));
+    setToken(token);
   };
 
   return {

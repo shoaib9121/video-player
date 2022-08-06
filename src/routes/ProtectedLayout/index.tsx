@@ -1,7 +1,6 @@
 import { Navigate, useOutlet } from "react-router-dom";
 import Header from "../../components/Header";
 import { useAuth } from "../../hooks/useAuth";
-import HomePage from "../../pages/Home";
 import { PageBody } from "../../styled";
 
 export const ProtectedLayout = () => {
@@ -14,11 +13,8 @@ export const ProtectedLayout = () => {
 
   return (
     <div>
-      <Header />
-      <PageBody>
-        <HomePage />
-      </PageBody>
-      {outlet}
+      <Header items={[{ name: "Home", path: "/" }]} />
+      <PageBody>{outlet}</PageBody>
     </div>
   );
 };

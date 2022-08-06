@@ -9,12 +9,14 @@ const RoutesComponent = () => {
   return (
     <Routes>
       <Route element={<HomeLayout />}>
-        <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
       </Route>
 
-      <Route path="/video" element={<ProtectedLayout />}>
-        <Route path="/video/:id" element={<VideoPage />} />
+      <Route element={<ProtectedLayout />}>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/video">
+          <Route path="/video/:id" element={<VideoPage />} />
+        </Route>
       </Route>
     </Routes>
   );

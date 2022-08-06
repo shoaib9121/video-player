@@ -2,6 +2,7 @@ import { ILoginCredentials, IUser } from "../../types";
 
 export interface IAuthState {
   user?: IUser;
-  login?: (loginCredentials: ILoginCredentials) => void
+  logout?: () => void;
   children?: React.ReactNode;
+  login?: (loginCredentials: ILoginCredentials, token: string) => void;
 }

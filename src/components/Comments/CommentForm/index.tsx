@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import { FormContainer } from "./styled";
 
-const CommentForm: React.FC<{ handleNewComment: (comment: string) => void }> = (
+const CommentForm: FC<{ handleNewComment: (comment: string) => void }> = (
   props
 ): JSX.Element => {
   const { handleNewComment } = props;

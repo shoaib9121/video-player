@@ -1,4 +1,4 @@
-import { Link, Navigate, useOutlet } from "react-router-dom";
+import { Navigate, useOutlet } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
 
 export const HomeLayout = () => {
@@ -6,15 +6,8 @@ export const HomeLayout = () => {
   const outlet = useOutlet();
 
   if (user) {
-    return <Navigate to="/home" />;
+    return <Navigate to="/" />;
   }
 
-  return (
-    <div>
-      <nav>
-        <Link to="/login">Login</Link>
-      </nav>
-      {outlet}
-    </div>
-  );
+  return <>{outlet}</>;
 };
