@@ -1,4 +1,5 @@
-import React from "react";
+import Switch from "@mui/material/Switch";
+import Typography from "@mui/material/Typography";
 import { useSettings } from "../../hooks/useSettings";
 
 const Settings = () => {
@@ -6,14 +7,15 @@ const Settings = () => {
 
   return (
     <>
-      <input
-        type="checkbox"
-        checked={settings.isComments}
-        onChange={(e) => {
-          toggleComments && toggleComments(e.target.checked);
-        }}
-      />
-      Toggle Comments {settings.isComments ? "Enabled" : "Disabled"}
+      <Typography variant="overline" display="block" gutterBottom>
+        Comments
+        <Switch
+          checked={settings.isComments}
+          onChange={(e) => {
+            toggleComments && toggleComments(e.target.checked);
+          }}
+        />
+      </Typography>
     </>
   );
 };

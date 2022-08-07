@@ -27,6 +27,7 @@ const App = () => {
   const defaultSettings: ISettings = {
     isComments: false,
   };
+
   return (
     <AppProvider videos={videos}>
       <SettingsProvider settings={defaultSettings}>

@@ -10,15 +10,7 @@ import Menu from "@mui/material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import { useAuth } from "../../hooks/useAuth";
 
-interface IHeaderProps {
-  items?: ILink[];
-}
-interface ILink {
-  name: string;
-  path: string;
-}
-
-const Header: FC<IHeaderProps> = (): JSX.Element => {
+const Header: FC = (): JSX.Element => {
   const { user, logout } = useAuth();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const menuId = "primary-search-account-menu";
@@ -70,19 +62,19 @@ const Header: FC<IHeaderProps> = (): JSX.Element => {
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="/"
+            component="span"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "inherit",
               textDecoration: "none",
             }}
           >
-            Video Player App
+            <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+              Video Player App
+            </Link>
           </Typography>
 
           <Box sx={{ flexGrow: 1 }} />

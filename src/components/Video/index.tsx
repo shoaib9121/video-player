@@ -1,12 +1,11 @@
 import { memo, useEffect, useState } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import { IVideo } from "../../types";
-import { findVideoById } from "../../utils";
+import { findVideoById, timeAgo } from "../../utils";
 import RelatedVideos from "./RelatedVideos";
 import ReactPlayer from "react-player";
 import { Grid, GridItemAside, GridItemVideo, VideoContainer } from "./styled";
 import Comments from "../Comments";
-import moment from "moment";
 import { useSettings } from "../../hooks/useSettings";
 
 const Video = (): JSX.Element => {
@@ -38,7 +37,7 @@ const Video = (): JSX.Element => {
           />
           <h3>{title}</h3>
           <p>{id} </p>
-          <span>{moment(createdAt).fromNow()}</span>
+          <span>{timeAgo(createdAt)}</span>
         </VideoContainer>
         {settings.isComments && <Comments comments={comments} />}
       </GridItemVideo>
