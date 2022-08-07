@@ -1,7 +1,7 @@
 export const videos =[
   {
     id: "62e954a4f1978f6c5016531c",
-    type: "yellow",
+    type: "chocolate",
     description: "Ipsum Lorem officia sit pariatur culpa Lorem sunt. Nostrud amet commodo in ex do dolor sunt eu tempor nisi qui. Est dolor anim et tempor non elit commodo id laborum sint sunt. Quis quis sint et mollit sint qui commodo deserunt ex anim consequat consectetur.",
     createdAt: "2016-09-10T09:21:48",
     url: "https://vimeo.com/243556536",
@@ -171,7 +171,7 @@ export const videos =[
   },
   {
     id: "62e954a4950b76b1a3d9b5fd",
-    type: "yellow",
+    type: "chocolate",
     description: "Anim labore aliqua reprehenderit anim cillum incididunt duis do occaecat. Culpa amet mollit elit velit ad. Elit exercitation laboris incididunt anim aute non enim do dolor adipisicing laboris in. Magna dolore ut id aute deserunt. Cillum reprehenderit magna veniam qui amet officia tempor elit est irure laborum cupidatat aliquip esse. Aute ut eu Lorem do est sint ullamco ipsum officia. Enim pariatur tempor dolor ad.",
     createdAt: "2018-05-15T07:18:34",
     url: "https://www.youtube.com/watch?v=ysz5S6PUM-U",
@@ -205,7 +205,7 @@ export const videos =[
   },
   {
     id: "62e954a4e37c9f865eb1069a",
-    type: "yellow",
+    type: "chocolate",
     description: "Consectetur est reprehenderit non dolore amet ad ullamco in fugiat et. Id mollit deserunt reprehenderit magna fugiat sit in. Ipsum laboris et exercitation velit qui.",
     createdAt: "2019-01-17T06:41:22",
     url: "https://www.youtube.com/watch?v=oUFJJNQGwhk",
@@ -239,7 +239,7 @@ export const videos =[
   },
   {
     id: "62e954a4a775c7412b553ac3",
-    type: "yellow",
+    type: "chocolate",
     description: "Laborum elit anim aliqua et elit in ad elit cupidatat quis adipisicing aute. Do in in in ad eu qui sint dolore. Elit non commodo irure magna veniam voluptate do veniam consectetur nulla minim ut sint.",
     createdAt: "2014-02-10T10:50:28",
     url: "https://stream.mux.com/D02iof00VDpNaWN02ZsrY4csqBi8jmz02OtR",

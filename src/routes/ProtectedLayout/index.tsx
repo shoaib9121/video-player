@@ -13,12 +13,7 @@ export const ProtectedLayout = () => {
 
   return (
     <div>
-      <Header
-        items={[
-          { name: "Home", path: "/" },
-          { name: "Settings", path: "/settings" },
-        ]}
-      />
+      <Header />
       <PageBody>{outlet}</PageBody>
     </div>
   );
