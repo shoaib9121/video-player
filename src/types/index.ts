@@ -1,10 +1,9 @@
-
-export interface IToken {
-  token: string;
+export interface IUser {
+  username: string;
 }
 
 export interface ILogin {
-  setToken: any;
+  setToken: (token: string) => void;
 }
 
 export interface ILoginCredentials {

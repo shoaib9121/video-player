@@ -1,15 +1,12 @@
-import { ILogin, ILoginCredentials, IToken, IVideo } from "../types";
+import { ILogin, ILoginCredentials, IVideo } from "../types";
 import config from "../utils/config";
-import { BASE_URL, DEFAULT_TOKEN } from "../utils/constants";
+import { BASE_URL } from "../utils/constants";
 
 export const loginUser = async (
   credentials: ILoginCredentials
-): Promise<IToken> => {
+): Promise<ILoginCredentials> => {
   try {
-    const dummyResp = {
-      token: DEFAULT_TOKEN,
-    };
-    return Promise.resolve(dummyResp);
+    return await Promise.resolve({ ...credentials });
   } catch (_e) {
     throw new Error("something went wrong");
   }

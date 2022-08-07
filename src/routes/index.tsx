@@ -1,16 +1,25 @@
 import { Routes, Route } from "react-router-dom";
-import Video from "../components/Video";
-import Home from "../pages/Home";
+import LoginPage from "../components/Login";
+import VideoPage from "../components/Video";
+import HomePage from "../pages/Home";
+import { HomeLayout } from "./HomeLayout";
+import { ProtectedLayout } from "./ProtectedLayout";
 
-const ProtectedRoutes = () => {
+const RoutesComponent = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/video">
-        <Route path="/video/:id" element={<Video />} />
+      <Route element={<HomeLayout />}>
+        <Route path="/login" element={<LoginPage />} />
+      </Route>
+
+      <Route element={<ProtectedLayout />}>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/video">
+          <Route path="/video/:id" element={<VideoPage />} />
+        </Route>
       </Route>
     </Routes>
   );
 };
 
-export default ProtectedRoutes;
+export default RoutesComponent;

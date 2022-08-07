@@ -1,18 +1,24 @@
 import React, { useState } from "react";
+import { useAuth } from "../../hooks/useAuth";
 import { loginUser } from "../../services";
-import { ILogin } from "../../types";
 
-const Login = ({ setToken }: ILogin) => {
+const Login = () => {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const { login } = useAuth();
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    const token = await loginUser({
+    if (!username && !password) return;
+
+    const loginCredentials = {
       username,
       password,
-    });
-    setToken(token);
+    };
+    const user = await loginUser(loginCredentials);
+    if (user) {
+      login && login(loginCredentials);
+    }
   };
 
   return (
@@ -36,7 +42,9 @@ const Login = ({ setToken }: ILogin) => {
           />
         </label>
         <div>
-          <button type="submit">Submit</button>
+          <button type="submit" disabled={!username && !password}>
+            Submit
+          </button>
         </div>
       </form>
     </div>

@@ -1,21 +1,17 @@
-import { BrowserRouter } from "react-router-dom";
-import Header from "./components/Header";
-import Login from "./components/Login";
-import useToken from "./hooks/useToken";
-import { Container, PageBody } from "./styled";
-import ProtectedRoutes from "./routes";
-import { DEFAULT_TOKEN } from "./utils/constants";
+import { Container } from "./styled";
 import AppProvider from "./hooks/useApp/app.provider";
 import { fetchVideos } from "./services";
 import { useEffect, useState } from "react";
 import { IVideo } from "./types";
+import RoutesComponent from "./routes";
+import { useAuth } from "./hooks/useAuth";
 
 const App = () => {
   const [videos, setVideos] = useState<IVideo[]>([]);
-  const { token, setToken = DEFAULT_TOKEN } = useToken();
+  const { user } = useAuth();
 
   useEffect(() => {
-    if (token) {
+    if (user) {
       getVideos();
     }
   }, []);
@@ -27,21 +23,12 @@ const App = () => {
     }
   };
 
-  if (!token) {
-    return <Login setToken={setToken} />;
-  }
-
   return (
-    <BrowserRouter>
-      <AppProvider videos={videos}>
-        <Container>
-          <Header />
-          <PageBody>
-            <ProtectedRoutes />
-          </PageBody>
-        </Container>
-      </AppProvider>
-    </BrowserRouter>
+    <AppProvider videos={videos}>
+      <Container>
+        <RoutesComponent />
+      </Container>
+    </AppProvider>
   );
 };
 export default App;

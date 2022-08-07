@@ -6,12 +6,13 @@ import RelatedVideos from "./RelatedVideos";
 import ReactPlayer from "react-player";
 import { Grid, GridItemAside, GridItemVideo, VideoContainer } from "./styled";
 import Comments from "../Comments";
+import moment from "moment";
 
 const Video = (): JSX.Element => {
   const { id = "" } = useParams();
   const location = useLocation();
   const [video, setVideo] = useState<IVideo>({} as IVideo);
-  const { title, url, comments } = video;
+  const { title, url, comments, createdAt } = video;
 
   useEffect(() => {
     setVideo(findVideoById(id));
@@ -33,13 +34,12 @@ const Video = (): JSX.Element => {
             config={{ file: { forceHLS: true } }}
             url={url}
           />
-
           <h3>{title}</h3>
           <p>{id} </p>
+          <span>{moment(createdAt).fromNow()}</span>
         </VideoContainer>
         <Comments comments={comments} />
       </GridItemVideo>
-
       <GridItemAside>
         <RelatedVideos video={video} />
       </GridItemAside>

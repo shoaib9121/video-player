@@ -1,29 +1,39 @@
-import React, { useState } from "react";
+import { FC, useState } from "react";
 import { FormContainer } from "./styled";
 
-const CommentForm: React.FC<{ handleNewComment: (comment: string) => void }> = (
+const CommentForm: FC<{ handleNewComment: (comment: string) => void }> = (
   props
 ): JSX.Element => {
   const { handleNewComment } = props;
   const [newComment, setNewComment] = useState("");
 
-  // const handleClick = useCallback((comment: IComment) => {}, []);
-
   return (
     <FormContainer>
-      {/* <form onSubmit={handleNewComment}> */}
       <label>
         <p>Username</p>
         <input
           type="text"
           value={newComment}
+          onKeyUp={(e) => {
+            if (e.key === "Enter") {
+              handleNewComment(e.target.value);
+              setNewComment("");
+            }
+          }}
           onChange={(e) => setNewComment(e.target.value)}
         />
       </label>
       <div>
-        <button onClick={() => handleNewComment(newComment)}>Submit</button>
+        <button
+          disabled={!newComment}
+          onClick={() => {
+            handleNewComment(newComment);
+            setNewComment("");
+          }}
+        >
+          Submit
+        </button>
       </div>
-      {/* </form> */}
     </FormContainer>
   );
 };
