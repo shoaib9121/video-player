@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { IVideo } from "./types";
 import RoutesComponent from "./routes";
 import { useAuth } from "./hooks/useAuth";
+import SettingsProvider from "./hooks/useSettings/settings.provider";
+import { ISettings } from "./hooks/useSettings/settings.types";
 
 const App = () => {
   const [videos, setVideos] = useState<IVideo[]>([]);
@@ -22,12 +24,16 @@ const App = () => {
       setVideos(data);
     }
   };
-
+  const defaultSettings: ISettings = {
+    isComments: false,
+  };
   return (
     <AppProvider videos={videos}>
-      <Container>
-        <RoutesComponent />
-      </Container>
+      <SettingsProvider settings={defaultSettings}>
+        <Container>
+          <RoutesComponent />
+        </Container>
+      </SettingsProvider>
     </AppProvider>
   );
 };

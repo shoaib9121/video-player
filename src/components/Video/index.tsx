@@ -7,10 +7,12 @@ import ReactPlayer from "react-player";
 import { Grid, GridItemAside, GridItemVideo, VideoContainer } from "./styled";
 import Comments from "../Comments";
 import moment from "moment";
+import { useSettings } from "../../hooks/useSettings";
 
 const Video = (): JSX.Element => {
   const { id = "" } = useParams();
   const location = useLocation();
+  const { settings } = useSettings();
   const [video, setVideo] = useState<IVideo>({} as IVideo);
   const { title, url, comments, createdAt } = video;
 
@@ -38,7 +40,7 @@ const Video = (): JSX.Element => {
           <p>{id} </p>
           <span>{moment(createdAt).fromNow()}</span>
         </VideoContainer>
-        <Comments comments={comments} />
+        {settings.isComments && <Comments comments={comments} />}
       </GridItemVideo>
       <GridItemAside>
         <RelatedVideos video={video} />
