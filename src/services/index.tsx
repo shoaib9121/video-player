@@ -1,6 +1,4 @@
-import { ILogin, ILoginCredentials, IVideo } from "../types";
-import config from "../utils/config";
-import { BASE_URL } from "../utils/constants";
+import { ILoginCredentials, IVideo } from "../types";
 
 export const loginUser = async (
   credentials: ILoginCredentials
@@ -25,20 +23,3 @@ export const fetchVideos = async (): Promise<IVideo[]> => {
     throw new Error("something went wrong");
   }
 };
-
-// export const loginUser = async (
-//   credentials: ILoginCredentials
-// ): Promise<ILogin> => {
-//   try {
-//     const resp = await fetch(`${BASE_URL}${config.login.uri}`, {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify(credentials),
-//     });
-//     return await resp.json();
-//   } catch (_e) {
-//     throw new Error("something went wrong");
-//   }
-// };
