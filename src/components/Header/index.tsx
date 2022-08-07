@@ -13,7 +13,7 @@ import { useAuth } from "../../hooks/useAuth";
 const Header: FC = (): JSX.Element => {
   const { user, logout } = useAuth();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const menuId = "primary-search-account-menu";
+  const menuId = "account-menu";
   const isMenuOpen = Boolean(anchorEl);
 
   const handleMenuClose = () => {
@@ -57,7 +57,7 @@ const Header: FC = (): JSX.Element => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="sticky">
         <Toolbar>
           <Typography
             variant="h6"
@@ -65,7 +65,7 @@ const Header: FC = (): JSX.Element => {
             component="span"
             sx={{
               mr: 2,
-              display: { xs: "none", md: "flex" },
+              display: { md: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
@@ -78,11 +78,11 @@ const Header: FC = (): JSX.Element => {
           </Typography>
 
           <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: "none", md: "flex" } }} alignItems="center">
+          <Box sx={{ display: { md: "flex" } }} alignItems="center">
             <Typography
               component="span"
               sx={{
-                display: { xs: "none", sm: "block" },
+                display: { xs: "none", md: "block" },
                 fontFamily: "monospace",
                 letterSpacing: ".1rem",
                 color: "inherit",

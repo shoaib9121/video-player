@@ -4,6 +4,10 @@ import { IComment } from "../../types";
 import CommentForm from "./CommentForm";
 import { useAuth } from "../../hooks/useAuth";
 import { sortByDate, timeAgo } from "../../utils";
+import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
+import AccountCircle from "@mui/icons-material/AccountCircle";
 
 const Comments: React.FC<{ comments: IComment[] }> = (props): JSX.Element => {
   const [comments, setComments] = useState<IComment[]>(props.comments || []);
@@ -36,9 +40,42 @@ const Comments: React.FC<{ comments: IComment[] }> = (props): JSX.Element => {
         {comments.map((comment: IComment) => {
           return (
             <CommentItem key={comment.id}>
-              <p>{comment.comment} </p>
-              <label> {comment.author}</label>
-              <span>{timeAgo(comment.createdAt)}</span>
+              <Paper
+                variant="outlined"
+                elevation={1}
+                sx={{ p: 2, background: "#f6f6f6" }}
+              >
+                <Grid container wrap="nowrap" spacing={2}>
+                  <Grid item>
+                    <AccountCircle style={{ fontSize: 50 }} />
+                  </Grid>
+                  <Grid justifyContent="left" item xs zeroMinWidth>
+                    <Typography
+                      variant="body1"
+                      display="flex"
+                      justifyContent="space-between"
+                      gutterBottom
+                    >
+                      {comment.author}
+                      <Typography
+                        variant="caption"
+                        component="span"
+                        color="gray"
+                      >
+                        {timeAgo(comment.createdAt)}
+                      </Typography>
+                    </Typography>
+                    <Typography
+                      className="comment"
+                      variant="body2"
+                      display="block"
+                      gutterBottom
+                    >
+                      {comment.comment}
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </Paper>
             </CommentItem>
           );
         })}

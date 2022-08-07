@@ -13,27 +13,30 @@ export const Grid = styled.div`
 `;
 
 export const GridItemVideo = styled.div`
-  width: 80%;
+  width: 75%;
   display: flex;
-  gap: 50px;
   flex-direction: column;
 
   @media (max-width: ${responsiveBreakpoint}) {
     width: 100%;
   }
-
-  @media (min-width: 1280px) {
-    width: 70%;
-  }
 `;
 
 export const VideoContainer = styled.div`
-  background: firebrick;
+  @media (max-width: ${responsiveBreakpoint}) {
+  }
+`;
+
+export const VideoOuter = styled.div`
   height: 450px;
+
+  @media (max-width: 400px) {
+    height: auto;
+  }
 `;
 
 export const GridItemAside = styled.div`
-  width: 20%;
+  width: 25%;
 
   @media (max-width: ${responsiveBreakpoint}) {
     width: 100%;

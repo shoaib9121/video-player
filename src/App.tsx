@@ -25,7 +25,7 @@ const App = () => {
     }
   };
   const defaultSettings: ISettings = {
-    isComments: false,
+    isComments: true,
   };
 
   return (
