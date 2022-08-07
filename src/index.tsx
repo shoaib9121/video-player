@@ -6,15 +6,25 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import AuthProvider from "./hooks/useAuth/auth.provider";
 import { IUser } from "./types";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
+const theme = createTheme({
+  palette: {
+    primary: { main: "#3a34d2" },
+  },
+});
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <AuthProvider user={{} as IUser}>
-        <App />
+        <ThemeProvider theme={theme}>
+          <App />
+        </ThemeProvider>
       </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>
