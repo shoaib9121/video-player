@@ -3,14 +3,14 @@ import { CommentContainer, CommentList, CommentItem } from "./styled";
 import { IComment } from "../../types";
 import CommentForm from "./CommentForm";
 import { useAuth } from "../../hooks/useAuth";
-import { timeAgo } from "../../utils";
+import { sortByDate, timeAgo } from "../../utils";
 
 const Comments: React.FC<{ comments: IComment[] }> = (props): JSX.Element => {
   const [comments, setComments] = useState<IComment[]>(props.comments || []);
   const { user } = useAuth();
 
   useEffect(() => {
-    setComments(props.comments);
+    setComments(sortByDate(props.comments));
   }, [props.comments]);
 
   const handleNewComment = (comment: string) => {
@@ -21,7 +21,7 @@ const Comments: React.FC<{ comments: IComment[] }> = (props): JSX.Element => {
       createdAt: new Date().toISOString(),
       id: Math.floor(Math.random() * 1000),
     });
-    setComments(tempComments);
+    setComments(sortByDate(tempComments));
   };
 
   if (!comments.length) {

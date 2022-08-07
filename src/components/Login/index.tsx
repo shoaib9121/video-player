@@ -9,13 +9,15 @@ const Login = () => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    if (!username && !password) return;
+
     const loginCredentials = {
       username,
       password,
     };
-    const token = await loginUser(loginCredentials);
-    if (token) {
-      login && login(loginCredentials, token);
+    const user = await loginUser(loginCredentials);
+    if (user) {
+      login && login(loginCredentials);
     }
   };
 
@@ -40,7 +42,9 @@ const Login = () => {
           />
         </label>
         <div>
-          <button type="submit">Submit</button>
+          <button type="submit" disabled={!username && !password}>
+            Submit
+          </button>
         </div>
       </form>
     </div>

@@ -4,5 +4,5 @@ export interface IAuthState {
   user: IUser;
   logout?: () => void;
   children?: React.ReactNode;
-  login?: (loginCredentials: ILoginCredentials, token: string) => void;
+  login?: (loginCredentials: ILoginCredentials) => void;
 }

@@ -14,11 +14,18 @@ const CommentForm: FC<{ handleNewComment: (comment: string) => void }> = (
         <input
           type="text"
           value={newComment}
+          onKeyUp={(e) => {
+            if (e.key === "Enter") {
+              handleNewComment(e.target.value);
+              setNewComment("");
+            }
+          }}
           onChange={(e) => setNewComment(e.target.value)}
         />
       </label>
       <div>
         <button
+          disabled={!newComment}
           onClick={() => {
             handleNewComment(newComment);
             setNewComment("");

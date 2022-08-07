@@ -11,7 +11,7 @@ export const filterVideosByType = (video = {} as IVideo) =>
 
 export const timeAgo = (time: any): string => moment(time).fromNow();
 
-export const sortByDate = (comments: IComment[]) => {
-  // const temp = comments.sort((a,b) =>  new Date(b.createdAt) - new Date(a.createdAt))
-  return 
+export const sortByDate = (comments: IComment[]): any[] => {
+  const tempComments: any[] = comments.map((comment: IComment) => {return {...comment, createdAt: new Date(comment.createdAt)}})
+  return  tempComments.sort((a,b) =>  b.createdAt - a.createdAt)
 };
