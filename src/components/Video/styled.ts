@@ -22,10 +22,7 @@ export const GridItemVideo = styled.div`
   }
 `;
 
-export const VideoContainer = styled.div`
-  @media (max-width: ${responsiveBreakpoint}) {
-  }
-`;
+export const VideoContainer = styled.div``;
 
 export const VideoOuter = styled.div`
   height: 450px;

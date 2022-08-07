@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
-export const CommentContainer = styled.div`
-
-`;
+export const CommentContainer = styled.div``;
 
 export const CommentList = styled.div`
   display: flex;
